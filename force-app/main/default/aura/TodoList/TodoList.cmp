@@ -1,0 +1,31 @@
+<aura:component>
+  <h1>TODO List</h1>
+  <!-- Two columns: one for tasks we need to do and another for completed tasks -->
+  <div class="slds-grid slds-gutters slds-p-around_small">
+    <!-- Incomplete tasks column-->
+    <div class="incomplete-tasks slds-box slds-col slds-medium-size_1-of-2 slds-small-size_2-of-2">
+      <h2 class="slds-text-heading_medium">Incomplete Tasks</h2>
+      <div class="slds-card">
+        <div class="slds-text-title_caps">TASK</div>
+        <div class="slds-text-body_regular">A simple task to do</div>
+        <button class="slds-button slds-button_success">Complete</button>
+      </div>
+      <div class="slds-card">
+        <div class="slds-text-title_caps">TASK</div>
+        <div class="slds-text-body_regular">Another simple task to do</div>
+        <button class="slds-button slds-button_success">Complete</button>
+      </div>
+    </div>
+    <div class="complete-tasks slds-box slds-col slds-medium-size_1-of-2 slds-small-size_2-of-2">
+      <h2 class="slds-text-heading_medium">Complete Tasks</h2>
+      <div class="slds-card">
+          <div class="slds-text-title_caps">TASK</div>
+
+          <div class="slds-text-body_regular">
+              <lightning:icon size="x-small" iconName="action:approval" alternativeText="Completed" />
+              <span>A completed task</span>
+          </div>
+        </div>
+    </div>
+  </div>
+</aura:component>	

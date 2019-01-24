@@ -1,0 +1,14 @@
+.THIS.container{
+  margin: 1rem;
+  border: 1px solid;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 90%;
+}
+
+.THIS > .title {
+  font-size: 24px;
+  font-weight: 900;
+}
