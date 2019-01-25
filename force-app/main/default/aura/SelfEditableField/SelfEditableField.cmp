@@ -1,0 +1,26 @@
+<aura:component>
+  <aura:attribute name="value" type="String" required="true"></aura:attribute>
+  <aura:attribute name="editMode" type="Boolean" default="false" access="private"></aura:attribute>
+  <aura:attribute name="tempValue" type="String" access="private"></aura:attribute>
+  
+  <aura:handler name="init" value="{!this}" action="{! c.doInit }"></aura:handler>
+
+  <aura:if isTrue="{! !v.editMode }">
+    <div class="clickable" onclick="{! c.toggleEdit }">
+        <h1 >{! v.value }</h1>
+    </div>
+    
+    <aura:set attribute="else">
+        <lightning:input value="{!v.tempValue}" label="Change the list's title"></lightning:input>
+        <div class="slds-grid">
+          <div class="slds-col">
+            <button class="slds-button slds-button_brand" onclick="{! c.saveValue }">Save</button>
+          </div>
+          <div class="slds-col">
+            <button class="slds-button" onclick="{! c.toggleEdit }">Cancel</button>
+          </div>
+        </div>
+    </aura:set>
+  </aura:if>
+  
+</aura:component>	

@@ -4,10 +4,8 @@
     default="[{content: 'A simple task', completed: false }, {content: 'Another simple task to do', completed: false }]" />
   <aura:attribute name="completeTasks" type="Object[]"
     default="[{content: 'Task completed yesterday', completed: true}]" />
-  <h1>{! v.title }</h1>
-  <div>
-    <lightning:input value="{!v.title}" label="Change the list's title"></lightning:input>
-  </div>
+  
+  <c:SelfEditableField value="{! v.title }" />
   <!-- Two columns: one for tasks we need to do and another for completed tasks -->
   <div class="slds-grid slds-gutters slds-p-around_small">
     <!-- Incomplete tasks column-->
@@ -17,6 +15,7 @@
         <c:TodoListItem task="{! task }" />
       </aura:iteration>
     </div>
+    <!-- complete tasks column -->
     <div class="complete-tasks slds-box slds-col slds-medium-size_1-of-2 slds-small-size_2-of-2">
       <h2 class="slds-text-heading_medium">Complete Tasks</h2>
       <aura:iteration items="{! v.completeTasks }" var="task">
