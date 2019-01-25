@@ -5,6 +5,10 @@
   <aura:attribute name="completeTasks" type="Object[]"
     default="[{content: 'Task completed yesterday', completed: true}]" />
   
+  <!-- handler to demonstrate changes in child components affect the parent as well -->
+  <aura:handler name="change" value="{!v.title}" action="{! c.onTitleChanged }"></aura:handler>
+  <aura:handler name="init" value="{!this}" action="{! c.onInit }"></aura:handler>
+
   <c:SelfEditableField value="{! v.title }" />
   <!-- Two columns: one for tasks we need to do and another for completed tasks -->
   <div class="slds-grid slds-gutters slds-p-around_small">

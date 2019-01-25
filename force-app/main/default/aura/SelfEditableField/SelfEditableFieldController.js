@@ -6,6 +6,7 @@
      * @param {*} helper 
      */
     doInit : function(component, event, helper) {
+        console.log('Initializing SelfEditableField inside TodoList ');
         component.set('v.tempValue', component.get('v.value'));
     },
     toggleEdit : function(component, event, helper) {
