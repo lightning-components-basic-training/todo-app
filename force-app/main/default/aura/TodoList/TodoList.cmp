@@ -5,30 +5,22 @@
   <aura:attribute name="completeTasks" type="Object[]"
     default="[{content: 'Task completed yesterday', completed: true}]" />
   <h1>{! v.title }</h1>
+  <div>
+    <lightning:input value="{!v.title}" label="Change the list's title"></lightning:input>
+  </div>
   <!-- Two columns: one for tasks we need to do and another for completed tasks -->
   <div class="slds-grid slds-gutters slds-p-around_small">
     <!-- Incomplete tasks column-->
     <div class="incomplete-tasks slds-box slds-col slds-medium-size_1-of-2 slds-small-size_2-of-2">
       <h2 class="slds-text-heading_medium">Incomplete Tasks</h2>
       <aura:iteration var="task" items="{! v.incompleteTasks }">
-        <div class="slds-card">
-          <div class="slds-text-title_caps">TASK</div>
-          <div class="slds-text-body_regular">{! task.content }</div>
-          <button class="slds-button slds-button_success">Complete</button>
-        </div>
+        <c:TodoListItem task="{! task }" />
       </aura:iteration>
     </div>
     <div class="complete-tasks slds-box slds-col slds-medium-size_1-of-2 slds-small-size_2-of-2">
       <h2 class="slds-text-heading_medium">Complete Tasks</h2>
       <aura:iteration items="{! v.completeTasks }" var="task">
-        <div class="slds-card">
-          <div class="slds-text-title_caps">TASK</div>
-
-          <div class="slds-text-body_regular">
-              <lightning:icon size="x-small" iconName="action:approval" alternativeText="Completed" />
-              <span>{! task.content }</span>
-          </div>
-        </div>
+        <c:TodoListItem task="{! task }"></c:TodoListItem>
       </aura:iteration>
       
     </div>

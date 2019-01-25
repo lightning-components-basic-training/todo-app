@@ -1,14 +1,5 @@
-# SFDX  App
+# Lightning TO-DO application
 
-## Dev, Build and Test
-
-
-## Resources
-
-
-## Description of Files and Directories
-
-
-## Issues
+This application is aimed at people in starting levels around lightning components 
 
 

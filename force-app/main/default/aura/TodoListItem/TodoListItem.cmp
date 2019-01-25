@@ -1,0 +1,17 @@
+<aura:component>
+  <!-- This component is used to show tasks in the TodoList component -->
+  <aura:attribute name="task" type="Object" required="true" />
+
+  <div class="slds-card">
+    <div class="slds-text-title_caps">TASK</div>
+    <div class="slds-text-body_regular">
+      <aura:if isTrue="{! v.task.completed }">
+          <lightning:icon size="x-small" iconName="action:approval" alternativeText="Completed" />
+      </aura:if>
+      <span>{! v.task.content }</span>
+    </div>
+    <aura:if isTrue="{! !v.task.completed }">
+      <button class="slds-button slds-button_success">Complete</button>
+    </aura:if>
+  </div>
+</aura:component>	
