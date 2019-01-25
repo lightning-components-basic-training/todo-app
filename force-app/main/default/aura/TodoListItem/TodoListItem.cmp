@@ -2,6 +2,9 @@
   <!-- This component is used to show tasks in the TodoList component -->
   <aura:attribute name="task" type="Object" required="true" />
 
+  <!-- This component will fire a COMPONENT event when the task is marked as completed -->
+  <aura:registerEvent name="taskCompleted" type="c:TaskCompleted"></aura:registerEvent>
+
   <div class="slds-card">
     <div class="slds-text-title_caps">TASK</div>
     <div class="slds-text-body_regular">
@@ -11,7 +14,7 @@
       <span>{! v.task.content }</span>
     </div>
     <aura:if isTrue="{! !v.task.completed }">
-      <button class="slds-button slds-button_success">Complete</button>
+      <button class="slds-button slds-button_success" onclick="{! c.completeTask }">Complete</button>
     </aura:if>
   </div>
 </aura:component>	

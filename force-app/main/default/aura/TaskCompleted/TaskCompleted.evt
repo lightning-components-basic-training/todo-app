@@ -1,0 +1,3 @@
+<aura:event type="COMPONENT" description="This event is fired every time a task is completed">
+  <aura:attribute name="task" type="Object"></aura:attribute>
+</aura:event>
