@@ -1,0 +1,3 @@
+<aura:event type="COMPONENT" description="A custom event fired when a task is addded">
+  <aura:attribute name="task" type="Object" required="true"></aura:attribute>
+</aura:event>

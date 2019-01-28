@@ -1,0 +1,9 @@
+<aura:component>
+  <aura:attribute name="taskContent" type="String" access="private" ></aura:attribute>
+  <aura:handler name="change" value="{! v.taskContent }" action="{! c.onTaskEnter }"></aura:handler>
+  <!-- This component will fire a COMPONENT event when the task is marked as completed -->
+  <aura:registerEvent name="taskCreated" type="c:TaskCreatedEvent"></aura:registerEvent>
+  <div class="slds-card">
+    <c:SelfEditableField value="{!v.taskContent}" label="Task Content" emptyValueText="Click to add a new Task" aura:id="newTask"/>
+  </div>
+</aura:component>	

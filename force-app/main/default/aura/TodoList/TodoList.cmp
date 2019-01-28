@@ -1,5 +1,5 @@
 <aura:component>
-  <aura:attribute name="title" type="String" default="TODO List" />
+  <aura:attribute name="title" type="String" />
   <aura:attribute name="incompleteTasks" type="Object[]" 
     default="[{id: 1, content: 'A simple task', completed: false }, {id: 2, content: 'Another simple task to do', completed: false }]" />
   <aura:attribute name="completeTasks" type="Object[]"
@@ -7,13 +7,15 @@
   
   <aura:handler name="init" value="{!this}" action="{! c.onInit }"></aura:handler>
   <aura:handler name="taskCompleted" event="c:TaskCompleted" action="{!c.onTaskCompleted}"></aura:handler>
-
-  <c:SelfEditableField value="{! v.title }" />
+  <aura:handler name="taskCreated" event="c:TaskCreatedEvent" action="{! c.onTaskCreated }"></aura:handler>
+  
+  <c:SelfEditableField value="{! v.title }" label="TODO List Title" emptyValueText="Click to edit the list's title" aura:id="listTitle"/>
   <!-- Two columns: one for tasks we need to do and another for completed tasks -->
   <div class="slds-grid slds-gutters slds-p-around_small">
     <!-- Incomplete tasks column-->
     <div class="incomplete-tasks slds-box slds-col slds-medium-size_1-of-2 slds-small-size_2-of-2">
       <h2 class="slds-text-heading_medium">Incomplete Tasks</h2>
+      <c:TaskCreator />
       <aura:iteration var="task" items="{! v.incompleteTasks }">
         <c:TodoListItem task="{! task }"/>
       </aura:iteration>

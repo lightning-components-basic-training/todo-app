@@ -15,5 +15,16 @@
         component.set('v.incompleteTasks', incompleteTasks);
         component.set('v.completeTasks', completedTasks);
 
+    },
+    /**
+     * Adds task to the list of incompleteTasks
+     * @param {Object} component the component
+     * @param {Object} task the new task
+     */
+    doTaskCreated: function(component, task) {
+        var incompleteTasks = component.get('v.incompleteTasks');
+        // add task to the beginning of the list
+        incompleteTasks.unshift(task);
+        component.set('v.incompleteTasks', incompleteTasks);
     }
 })

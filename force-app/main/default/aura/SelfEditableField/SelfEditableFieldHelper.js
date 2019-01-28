@@ -16,6 +16,7 @@
     },
     saveValue : function(component) {
         component.set('v.value', component.get('v.tempValue'));
+        component.set('v.tempValue', null);
         this.toggleEdit(component);
     }
 })

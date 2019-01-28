@@ -1,3 +1,7 @@
 .THIS.clickable{
   cursor: pointer;
 }
+
+.THIS {
+  min-height: 1rem;
+}
